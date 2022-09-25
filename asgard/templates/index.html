@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    {%load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indegeneous</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+
+<body>
+    <h1 class="title">A website about Asgard</h1>
+
+    <div class="row">
+
+        {% for object in objects %}
+        <div class="col">
+            <button class="btn" id={{object.id}} type="button" ondblclick="btnFunction2()" onclick="btnFunction(this, id, '{{object.description}}' )">{{object.title}}</button>
+        </div>
+        {% endfor %}
+       
+    </div>
+
+    <div class="row2">
+        <h2 class="description">Description</h2>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+
+
+</html>
